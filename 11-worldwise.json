@@ -1,0 +1,384 @@
+{
+  "repoName": "soeweiyan-phyo/11-worldwise",
+  "repoLink": "https://github.com/soeweiyan-phyo/11-worldwise",
+  "files": [
+    {
+      "name": ".eslintrc.cjs",
+      "type": "file",
+      "content": "module.exports = {\n  root: true,\n  env: { browser: true, es2020: true },\n  extends: [\n    \"react-app\",\n    \"eslint:recommended\",\n    \"plugin:react/recommended\",\n    \"plugin:react/jsx-runtime\",\n    \"plugin:react-hooks/recommended\",\n  ],\n  ignorePatterns: [\"dist\", \".eslintrc.cjs\"],\n  parserOptions: { ecmaVersion: \"latest\", sourceType: \"module\" },\n  settings: { react: { version: \"18.2\" } },\n  plugins: [\"react-refresh\"],\n  rules: {\n    \"react-refresh/only-export-components\": [\n      \"warn\",\n      { allowConstantExport: true },\n    ],\n    \"react/prop-types\": \"off\",\n    \"no-unused-vars\": [\"warn\", { varsIgnorePattern: \"VARIABLE_NAME\" }],\n  },\n};\n"
+    },
+    {
+      "name": ".gitignore",
+      "type": "file",
+      "content": "# Logs\nlogs\n*.log\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\npnpm-debug.log*\nlerna-debug.log*\n\nnode_modules\ndist\ndist-ssr\n*.local\n\n# Editor directories and files\n.vscode/*\n!.vscode/extensions.json\n.idea\n.DS_Store\n*.suo\n*.ntvs*\n*.njsproj\n*.sln\n*.sw?\n"
+    },
+    {
+      "name": "data",
+      "type": "directory",
+      "children": [
+        {
+          "name": "cities.json",
+          "type": "file",
+          "content": "{\"cities\":[{\"cityName\":\"Lisbon\",\"country\":\"Portugal\",\"emoji\":\"🇵🇹\",\"date\":\"2027-10-31T15:59:59.138Z\",\"notes\":\"My favorite city so far!\",\"position\":{\"lat\":38.727881642324164,\"lng\":-9.140900099907554},\"id\":73930385},{\"cityName\":\"Madrid\",\"country\":\"Spain\",\"emoji\":\"🇪🇸\",\"date\":\"2027-07-15T08:22:53.976Z\",\"notes\":\"\",\"position\":{\"lat\":40.46635901755316,\"lng\":-3.7133789062500004},\"id\":17806751},{\"cityName\":\"Berlin\",\"country\":\"Germany\",\"emoji\":\"🇩🇪\",\"date\":\"2027-02-12T09:24:11.863Z\",\"notes\":\"Amazing 😃\",\"position\":{\"lat\":52.53586782505711,\"lng\":13.376933665713324},\"id\":98443197},{\"cityName\":\"Vang\",\"country\":\"Norway\",\"emoji\":\"🇳🇴\",\"date\":\"2023-08-31T12:24:35.372Z\",\"notes\":\"\",\"position\":{\"lat\":\"61.10003842782294\",\"lng\":\"8.305664062500002\"},\"id\":98443198}]}"
+        }
+      ]
+    },
+    {
+      "name": "index.html",
+      "type": "file",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/png\" href=\"/icon.png\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>WorldWise // Keep track of your adventures</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx\"></script>\n  </body>\n</html>\n"
+    },
+    {
+      "name": "package.json",
+      "type": "file",
+      "content": "{\"name\":\"worldwise\",\"private\":true,\"version\":\"0.0.0\",\"type\":\"module\",\"scripts\":{\"dev\":\"vite\",\"build\":\"vite build\",\"lint\":\"eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0\",\"preview\":\"vite preview\",\"server\":\"json-server --watch data/cities.json --port 8000 --delay 500\"},\"dependencies\":{\"json-server\":\"^0.17.3\",\"leaflet\":\"^1.9.4\",\"react\":\"^18.2.0\",\"react-datepicker\":\"^4.16.0\",\"react-dom\":\"^18.2.0\",\"react-leaflet\":\"^4.2.1\",\"react-router-dom\":\"^6.15.0\"},\"devDependencies\":{\"@types/react\":\"^18.2.15\",\"@types/react-dom\":\"^18.2.7\",\"@vitejs/plugin-react\":\"^4.0.3\",\"eslint\":\"^8.47.0\",\"eslint-config-react-app\":\"^7.0.1\",\"eslint-plugin-react\":\"^7.32.2\",\"eslint-plugin-react-hooks\":\"^4.6.0\",\"eslint-plugin-react-refresh\":\"^0.4.3\",\"vite\":\"^4.4.5\",\"vite-plugin-eslint\":\"^1.8.1\"}}"
+    },
+    {
+      "name": "public",
+      "type": "directory",
+      "children": [
+        {
+          "name": "bg.jpg",
+          "type": "file",
+          "content": ""
+        },
+        {
+          "name": "icon.png",
+          "type": "file",
+          "content": ""
+        },
+        {
+          "name": "img-1.jpg",
+          "type": "file",
+          "content": ""
+        },
+        {
+          "name": "img-2.jpg",
+          "type": "file",
+          "content": ""
+        },
+        {
+          "name": "logo.png",
+          "type": "file",
+          "content": ""
+        },
+        {
+          "name": "vite.svg",
+          "type": "file",
+          "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" role=\"img\" class=\"iconify iconify--logos\" width=\"31.88\" height=\"32\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 256 257\"><defs><linearGradient id=\"IconifyId1813088fe1fbc01fb466\" x1=\"-.828%\" x2=\"57.636%\" y1=\"7.652%\" y2=\"78.411%\"><stop offset=\"0%\" stop-color=\"#41D1FF\"></stop><stop offset=\"100%\" stop-color=\"#BD34FE\"></stop></linearGradient><linearGradient id=\"IconifyId1813088fe1fbc01fb467\" x1=\"43.376%\" x2=\"50.316%\" y1=\"2.242%\" y2=\"89.03%\"><stop offset=\"0%\" stop-color=\"#FFEA83\"></stop><stop offset=\"8.333%\" stop-color=\"#FFDD35\"></stop><stop offset=\"100%\" stop-color=\"#FFA800\"></stop></linearGradient></defs><path fill=\"url(#IconifyId1813088fe1fbc01fb466)\" d=\"M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z\"></path><path fill=\"url(#IconifyId1813088fe1fbc01fb467)\" d=\"M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z\"></path></svg>"
+        }
+      ]
+    },
+    {
+      "name": "src",
+      "type": "directory",
+      "children": [
+        {
+          "name": "App.jsx",
+          "type": "file",
+          "content": "import { BrowserRouter, Navigate, Route, Routes } from \"react-router-dom\";\nimport { CitiesProvider } from \"./contexts/CitiesContext\";\nimport { AuthProvider } from \"./contexts/FakeAuthContext\";\nimport { Suspense, lazy } from \"react\";\nimport ProtectedRoute from \"./pages/ProtectedRoute\";\n\nimport CityList from \"./components/CityList\";\nimport CountryList from \"./components/CountryList\";\nimport City from \"./components/City\";\nimport Form from \"./components/Form\";\nimport SpinnerFullPage from \"./components/SpinnerFullPage\";\n\nconst Homepage = lazy(() => import(\"./pages/Homepage\"));\nconst Product = lazy(() => import(\"./pages/Product\"));\nconst Pricing = lazy(() => import(\"./pages/Pricing\"));\nconst Login = lazy(() => import(\"./pages/Login\"));\nconst AppLayout = lazy(() => import(\"./pages/AppLayout\"));\nconst PageNotFound = lazy(() => import(\"./pages/PageNotFound\"));\n\nfunction App() {\n  return (\n    <CitiesProvider>\n      <AuthProvider>\n        <BrowserRouter>\n          <Suspense fallback={<SpinnerFullPage />}>\n            <Routes>\n              <Route index element={<Homepage />} />\n              <Route path=\"product\" element={<Product />} />\n              <Route path=\"pricing\" element={<Pricing />} />\n              <Route path=\"login\" element={<Login />} />\n              <Route\n                path=\"app\"\n                element={\n                  <ProtectedRoute>\n                    <AppLayout />\n                  </ProtectedRoute>\n                }\n              >\n                <Route index element={<Navigate replace to=\"cities\" />} />\n                <Route path=\"cities\" element={<CityList />} />\n                <Route path=\"cities/:id\" element={<City />} />\n                <Route path=\"countries\" element={<CountryList />} />\n                <Route path=\"form\" element={<Form />} />\n              </Route>\n              <Route path=\"*\" element={<PageNotFound />} />\n            </Routes>\n          </Suspense>\n        </BrowserRouter>\n      </AuthProvider>\n    </CitiesProvider>\n  );\n}\n\nexport default App;\n"
+        },
+        {
+          "name": "assets",
+          "type": "directory",
+          "children": [
+            {
+              "name": "react.svg",
+              "type": "file",
+              "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" role=\"img\" class=\"iconify iconify--logos\" width=\"35.93\" height=\"32\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 256 228\"><path fill=\"#00D8FF\" d=\"M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z\"></path></svg>"
+            }
+          ]
+        },
+        {
+          "name": "components",
+          "type": "directory",
+          "children": [
+            {
+              "name": "AppNav.jsx",
+              "type": "file",
+              "content": "import { NavLink } from \"react-router-dom\";\nimport styles from \"./AppNav.module.css\";\n\nfunction AppNav() {\n  return (\n    <nav className={styles.nav}>\n      <ul>\n        <li>\n          <NavLink to=\"cities\">Cities</NavLink>\n        </li>\n        <li>\n          <NavLink to=\"countries\">Countries</NavLink>\n        </li>\n      </ul>\n    </nav>\n  );\n}\n\nexport default AppNav;\n"
+            },
+            {
+              "name": "AppNav.module.css",
+              "type": "file",
+              "content": ".nav {\n  margin-top: 3rem;\n  margin-bottom: 2rem;\n}\n\n.nav ul {\n  list-style: none;\n  display: flex;\n  background-color: var(--color-dark--2);\n  border-radius: 7px;\n}\n\n.nav a:link,\n.nav a:visited {\n  display: block;\n  color: inherit;\n  text-decoration: none;\n  text-transform: uppercase;\n  font-size: 1.2rem;\n  font-weight: 700;\n  padding: 0.5rem 2rem;\n  border-radius: 5px;\n}\n\n/* CSS Modules feature */\n.nav a:global(.active) {\n  background-color: var(--color-dark--0);\n}\n"
+            },
+            {
+              "name": "BackButton.jsx",
+              "type": "file",
+              "content": "import { useNavigate } from \"react-router-dom\";\nimport Button from \"./Button\";\n\nfunction BackButton() {\n  const navigate = useNavigate();\n\n  return (\n    <Button\n      type=\"back\"\n      onClick={(e) => {\n        e.preventDefault();\n        navigate(-1);\n      }}\n    >\n      &larr; Back\n    </Button>\n  );\n}\n\nexport default BackButton;\n"
+            },
+            {
+              "name": "Button.jsx",
+              "type": "file",
+              "content": "import styles from \"./Button.module.css\";\n\nfunction Button({ children, onClick, type }) {\n  return (\n    <button className={`${styles.btn} ${styles[type]}`} onClick={onClick}>\n      {children}\n    </button>\n  );\n}\n\nexport default Button;\n"
+            },
+            {
+              "name": "Button.module.css",
+              "type": "file",
+              "content": ".btn {\n  color: inherit;\n  text-transform: uppercase;\n  padding: 0.8rem 1.6rem;\n  font-family: inherit;\n  font-size: 1.5rem;\n  border: none;\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.primary {\n  font-weight: 700;\n  background-color: var(--color-brand--2);\n  color: var(--color-dark--1);\n}\n\n.back {\n  font-weight: 600;\n  background: none;\n  border: 1px solid currentColor;\n}\n\n.position {\n  font-weight: 700;\n  position: absolute;\n  z-index: 1000;\n  font-size: 1.4rem;\n  bottom: 4rem;\n  left: 50%;\n  transform: translateX(-50%);\n  background-color: var(--color-brand--2);\n  color: var(--color-dark--1);\n  box-shadow: 0 0.4rem 1.2rem rgba(36, 42, 46, 0.16);\n}\n"
+            },
+            {
+              "name": "City.jsx",
+              "type": "file",
+              "content": "import { useParams } from \"react-router-dom\";\nimport styles from \"./City.module.css\";\nimport { useCities } from \"../contexts/CitiesContext\";\nimport { useEffect } from \"react\";\nimport Spinner from \"./Spinner\";\nimport BackButton from \"./BackButton\";\n\nconst formatDate = (date) =>\n  new Intl.DateTimeFormat(\"en\", {\n    day: \"numeric\",\n    month: \"long\",\n    year: \"numeric\",\n    weekday: \"long\",\n  }).format(new Date(date));\n\nfunction City() {\n  const { id } = useParams();\n  const { currentCity, getCity, isLoading } = useCities();\n\n  useEffect(\n    function () {\n      getCity(id);\n    },\n    [id, getCity]\n  );\n\n  const { cityName, emoji, date, notes } = currentCity;\n\n  if (isLoading) return <Spinner />;\n\n  return (\n    <div className={styles.city}>\n      <div className={styles.row}>\n        <h6>City name</h6>\n        <h3>\n          <span>{emoji}</span> {cityName}\n        </h3>\n      </div>\n\n      <div className={styles.row}>\n        <h6>You went to {cityName} on</h6>\n        <p>{formatDate(date || null)}</p>\n      </div>\n\n      {notes && (\n        <div className={styles.row}>\n          <h6>Your notes</h6>\n          <p>{notes}</p>\n        </div>\n      )}\n\n      <div className={styles.row}>\n        <h6>Learn more</h6>\n        <a\n          href={`https://en.wikipedia.org/wiki/${cityName}`}\n          target=\"_blank\"\n          rel=\"noreferrer\"\n        >\n          Check out {cityName} on Wikipedia &rarr;\n        </a>\n      </div>\n\n      <div>\n        <BackButton />\n      </div>\n    </div>\n  );\n}\n\nexport default City;\n"
+            },
+            {
+              "name": "City.module.css",
+              "type": "file",
+              "content": ".city {\n  padding: 2rem 3rem;\n  max-height: 70%;\n  background-color: var(--color-dark--2);\n  border-radius: 7px;\n  overflow: auto;\n\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 2rem;\n}\n\n.row {\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n}\n\n.city h6 {\n  text-transform: uppercase;\n  font-size: 1.1rem;\n  font-weight: 900;\n  color: var(--color-light--1);\n}\n\n.city h3 {\n  font-size: 1.9rem;\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n}\n\n.city h3 span {\n  font-size: 3.2rem;\n  line-height: 1;\n}\n\n.city p {\n  font-size: 1.6rem;\n}\n\n.city a:link,\n.city a:visited {\n  font-size: 1.6rem;\n  color: var(--color-brand--1);\n}\n"
+            },
+            {
+              "name": "CityItem.jsx",
+              "type": "file",
+              "content": "import { Link } from \"react-router-dom\";\nimport styles from \"./CityItem.module.css\";\nimport { useCities } from \"../contexts/CitiesContext\";\n\nconst formatDate = (date) =>\n  new Intl.DateTimeFormat(\"en\", {\n    day: \"numeric\",\n    month: \"long\",\n    year: \"numeric\",\n  }).format(new Date(date));\n\nfunction CityItem({ city }) {\n  const { currentCity, deleteCity } = useCities();\n  const { cityName, emoji, date, id, position } = city;\n\n  function handleClick(e) {\n    e.preventDefault();\n    deleteCity(id);\n  }\n\n  return (\n    <li>\n      <Link\n        className={`${styles.cityItem} ${\n          id === currentCity.id ? styles[\"cityItem--active\"] : \"\"\n        }`}\n        to={`${id}?lat=${position.lat}&lng=${position.lng}`}\n      >\n        <span className={styles.emoji}>{emoji}</span>\n        <h3 className={styles.name}>{cityName}</h3>\n        <time className={styles.date}>({formatDate(date)})</time>\n        <button className={styles.deleteBtn} onClick={handleClick}>\n          &times;\n        </button>\n      </Link>\n    </li>\n  );\n}\n\nexport default CityItem;\n"
+            },
+            {
+              "name": "CityItem.module.css",
+              "type": "file",
+              "content": ".cityItem,\n.cityItem:link,\n.cityItem:visited {\n  display: flex;\n  gap: 1.6rem;\n  align-items: center;\n\n  background-color: var(--color-dark--2);\n  border-radius: 7px;\n  padding: 1rem 2rem;\n  border-left: 5px solid var(--color-brand--2);\n  cursor: pointer;\n\n  color: inherit;\n  text-decoration: none;\n}\n\n.cityItem--active {\n  border: 2px solid var(--color-brand--2);\n  border-left: 5px solid var(--color-brand--2);\n}\n\n.emoji {\n  font-size: 2.6rem;\n  line-height: 1;\n}\n\n.name {\n  font-size: 1.7rem;\n  font-weight: 600;\n  margin-right: auto;\n}\n\n.date {\n  font-size: 1.5rem;\n}\n\n.deleteBtn {\n  height: 2rem;\n  aspect-ratio: 1;\n  border-radius: 50%;\n  border: none;\n  background-color: var(--color-dark--1);\n  color: var(--color-light--2);\n  font-size: 1.6rem;\n  font-weight: 400;\n  cursor: pointer;\n  transition: all 0.2s;\n}\n\n.deleteBtn:hover {\n  background-color: var(--color-brand--1);\n  color: var(--color-dark--1);\n}\n"
+            },
+            {
+              "name": "CityList.jsx",
+              "type": "file",
+              "content": "import Spinner from \"./Spinner\";\nimport CityItem from \"./CityItem\";\nimport Message from \"./Message\";\nimport styles from \"./CityList.module.css\";\nimport { useCities } from \"../contexts/CitiesContext\";\n\nfunction CityList() {\n  const { cities, isLoading } = useCities();\n\n  if (isLoading) return <Spinner />;\n\n  if (!cities.length)\n    return (\n      <Message message=\"Add your first city by clicking on a city on the map\" />\n    );\n\n  return (\n    <ul className={styles.cityList}>\n      {cities.map((city) => (\n        <CityItem city={city} key={city.id} />\n      ))}\n    </ul>\n  );\n}\n\nexport default CityList;\n"
+            },
+            {
+              "name": "CityList.module.css",
+              "type": "file",
+              "content": ".cityList {\n  width: 100%;\n  height: 65vh;\n  list-style: none;\n  overflow-y: auto;\n  overflow-x: hidden;\n\n  display: flex;\n  flex-direction: column;\n  gap: 1.4rem;\n}\n\n.cityList::-webkit-scrollbar {\n  width: 0;\n}\n"
+            },
+            {
+              "name": "CountryItem.jsx",
+              "type": "file",
+              "content": "import styles from \"./CountryItem.module.css\";\n\nfunction CountryItem({ country }) {\n  return (\n    <li className={styles.countryItem}>\n      <span>{country.emoji}</span>\n      <span>{country.country}</span>\n    </li>\n  );\n}\n\nexport default CountryItem;\n"
+            },
+            {
+              "name": "CountryItem.module.css",
+              "type": "file",
+              "content": ".countryItem {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0.2rem;\n\n  font-size: 1.7rem;\n  font-weight: 600;\n\n  background-color: var(--color-dark--2);\n  border-radius: 7px;\n  padding: 1rem 2rem;\n  border-left: 5px solid var(--color-brand--1);\n}\n\n.countryItem span:first-child {\n  font-size: 3rem;\n  line-height: 1;\n}\n"
+            },
+            {
+              "name": "CountryList.jsx",
+              "type": "file",
+              "content": "import Spinner from \"./Spinner\";\nimport CountryItem from \"./CountryItem\";\nimport Message from \"./Message\";\nimport styles from \"./CountryList.module.css\";\nimport { useCities } from \"../contexts/CitiesContext\";\n\nfunction CountryList() {\n  const { cities, isLoading } = useCities();\n\n  if (isLoading) return <Spinner />;\n\n  if (!cities.length)\n    return (\n      <Message message=\"Add your first city by clicking on a city on the map\" />\n    );\n\n  const countries = cities.reduce((arr, city) => {\n    if (!arr.map((el) => el.country).includes(city.country)) {\n      return [\n        ...arr,\n        { country: city.country, emoji: city.emoji, id: city.id },\n      ];\n    } else {\n      return arr;\n    }\n  }, []);\n\n  return (\n    <ul className={styles.countryList}>\n      {countries.map((country) => (\n        <CountryItem country={country} key={country.id} />\n      ))}\n    </ul>\n  );\n}\n\nexport default CountryList;\n"
+            },
+            {
+              "name": "CountryList.module.css",
+              "type": "file",
+              "content": ".countryList {\n  width: 100%;\n  height: 65vh;\n  list-style: none;\n  overflow-y: auto;\n  overflow-x: hidden;\n\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  align-content: start;\n  gap: 1.6rem;\n}\n"
+            },
+            {
+              "name": "Footer.jsx",
+              "type": "file",
+              "content": "import styles from \"./Footer.module.css\";\n\nfunction Footer() {\n  return (\n    <footer className={styles.footer}>\n      <p className={styles.copyright}>\n        &copy; Copyright {new Date().getFullYear()} by WorldWise Inc.\n      </p>\n    </footer>\n  );\n}\n\nexport default Footer;\n"
+            },
+            {
+              "name": "Footer.module.css",
+              "type": "file",
+              "content": ".footer {\n  margin-top: auto;\n}\n\n.copyright {\n  font-size: 1.2rem;\n  color: var(--color-light--1);\n}\n"
+            },
+            {
+              "name": "Form.jsx",
+              "type": "file",
+              "content": "// \"https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0\"\n\nimport { useEffect, useState } from \"react\";\nimport { useUrlPosition } from \"../hooks/useUrlPosition\";\n\nimport styles from \"./Form.module.css\";\nimport Button from \"./Button\";\nimport BackButton from \"./BackButton\";\nimport Message from \"./Message\";\nimport Spinner from \"./Spinner\";\n\nimport DatePicker from \"react-datepicker\";\nimport \"react-datepicker/dist/react-datepicker.css\";\nimport { useCities } from \"../contexts/CitiesContext\";\nimport { useNavigate } from \"react-router-dom\";\n\nexport function convertToEmoji(countryCode) {\n  const codePoints = countryCode\n    .toUpperCase()\n    .split(\"\")\n    .map((char) => 127397 + char.charCodeAt());\n  return String.fromCodePoint(...codePoints);\n}\n\nconst BASE_URL = \"https://api.bigdatacloud.net/data/reverse-geocode-client\";\n\nfunction Form() {\n  const [lat, lng] = useUrlPosition();\n  const { createCity, isLoading } = useCities();\n  const navigate = useNavigate();\n\n  const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);\n  const [cityName, setCityName] = useState(\"\");\n  const [country, setCountry] = useState(\"\");\n  const [date, setDate] = useState(new Date());\n  const [notes, setNotes] = useState(\"\");\n  const [emoji, setEmoji] = useState(\"\");\n  const [geocodingError, setGeocodingError] = useState(\"\");\n\n  useEffect(\n    function () {\n      if (!lat && !lng) return;\n\n      async function fetchCityData() {\n        try {\n          setIsLoadingGeocoding(true);\n          setGeocodingError(\"\");\n\n          const res = await fetch(\n            `${BASE_URL}?latitude=${lat}&longitude=${lng}`\n          );\n          const data = await res.json();\n\n          if (!data.countryCode)\n            throw new Error(\n              \"That doesn't seem to be a city. Click somewhere else 😉\"\n            );\n\n          setCityName(data.city || data.locality);\n          setCountry(data.countryName);\n          setEmoji(convertToEmoji(data.countryCode));\n        } catch (err) {\n          setGeocodingError(err.message);\n        } finally {\n          setIsLoadingGeocoding(false);\n        }\n      }\n      fetchCityData();\n    },\n    [lat, lng]\n  );\n\n  async function handleSubmit(e) {\n    e.preventDefault();\n\n    if (!cityName || !date) return;\n\n    const newCity = {\n      cityName,\n      country,\n      emoji,\n      date,\n      notes,\n      position: { lat, lng },\n    };\n\n    await createCity(newCity);\n    navigate(\"/app/cities\");\n  }\n\n  if (isLoadingGeocoding) return <Spinner />;\n\n  if (!lat && !lng)\n    return <Message message=\"Start by clicking somewhere on the map\" />;\n\n  if (geocodingError) return <Message message={geocodingError} />;\n\n  return (\n    <form\n      className={`${styles.form} ${isLoading ? styles.loading : \"\"}`}\n      onSubmit={handleSubmit}\n    >\n      <div className={styles.row}>\n        <label htmlFor=\"cityName\">City name</label>\n        <input\n          id=\"cityName\"\n          onChange={(e) => setCityName(e.target.value)}\n          value={cityName}\n        />\n        <span className={styles.flag}>{emoji}</span>\n      </div>\n\n      <div className={styles.row}>\n        <label htmlFor=\"date\">When did you go to {cityName}?</label>\n        {/* <input\n          id=\"date\"\n          onChange={(e) => setDate(e.target.value)}\n          value={date}\n        /> */}\n        <DatePicker\n          id=\"date\"\n          onChange={(date) => setDate(date)}\n          selected={date}\n          dateFormat=\"dd/MM/yyyy\"\n        />\n      </div>\n\n      <div className={styles.row}>\n        <label htmlFor=\"notes\">Notes about your trip to {cityName}</label>\n        <textarea\n          id=\"notes\"\n          onChange={(e) => setNotes(e.target.value)}\n          value={notes}\n        />\n      </div>\n\n      <div className={styles.buttons}>\n        <Button type=\"primary\">Add</Button>\n        <BackButton />\n      </div>\n    </form>\n  );\n}\n\nexport default Form;\n"
+            },
+            {
+              "name": "Form.module.css",
+              "type": "file",
+              "content": ".form {\n  background-color: var(--color-dark--2);\n  border-radius: 7px;\n  padding: 2rem 3rem;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 2rem;\n}\n\n.row {\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n  position: relative;\n}\n\n.buttons {\n  display: flex;\n  justify-content: space-between;\n}\n\n.flag {\n  position: absolute;\n  right: 1rem;\n  top: 2.7rem;\n  font-size: 2.8rem;\n}\n\n.form.loading {\n  opacity: 0.3;\n}\n\n.form.loading button {\n  pointer-events: none;\n  background-color: var(--color-light--1);\n  border: 1px solid var(--color-light--1);\n  color: var(--color-dark--0);\n}\n\n:global(.react-datepicker) {\n  font-family: inherit;\n  font-size: 1.2rem;\n}\n"
+            },
+            {
+              "name": "Logo.jsx",
+              "type": "file",
+              "content": "import { Link } from \"react-router-dom\";\nimport styles from \"./Logo.module.css\";\n\nfunction Logo() {\n  return (\n    <Link to=\"/\">\n      <img src=\"/logo.png\" alt=\"WorldWise logo\" className={styles.logo} />\n    </Link>\n  );\n}\n\nexport default Logo;\n"
+            },
+            {
+              "name": "Logo.module.css",
+              "type": "file",
+              "content": ".logo {\n  height: 5.2rem;\n}\n"
+            },
+            {
+              "name": "Map.jsx",
+              "type": "file",
+              "content": "import { useEffect, useState } from \"react\";\nimport { useNavigate } from \"react-router-dom\";\nimport {\n  MapContainer,\n  TileLayer,\n  Marker,\n  Popup,\n  useMap,\n  useMapEvents,\n} from \"react-leaflet\";\n\nimport styles from \"./Map.module.css\";\nimport { useCities } from \"../contexts/CitiesContext\";\nimport { useGeolocation } from \"../hooks/useGeolocation\";\nimport Button from \"./Button\";\nimport { useUrlPosition } from \"../hooks/useUrlPosition\";\n\nfunction Map() {\n  const { cities } = useCities();\n  const [mapPosition, setMapPosition] = useState([40, 0]);\n  const {\n    isLoading: isLoadingPosition,\n    position: geolocationPosition,\n    getPosition,\n  } = useGeolocation();\n  const [mapLat, mapLng] = useUrlPosition();\n\n  useEffect(\n    function () {\n      if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);\n    },\n    [mapLat, mapLng]\n  );\n\n  useEffect(\n    function () {\n      if (geolocationPosition) {\n        setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);\n      }\n    },\n    [geolocationPosition]\n  );\n\n  return (\n    <div className={styles.mapContainer}>\n      {!geolocationPosition && (\n        <Button type=\"position\" onClick={getPosition}>\n          {isLoadingPosition ? \"Loading...\" : \"Use your position\"}\n        </Button>\n      )}\n      <MapContainer\n        className={styles.map}\n        center={mapPosition}\n        zoom={6}\n        scrollWheelZoom={true}\n      >\n        <TileLayer\n          attribution='&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\n          url=\"https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png\"\n        />\n        {cities.map((city) => (\n          <Marker\n            position={[city.position.lat, city.position.lng]}\n            key={city.id}\n          >\n            <Popup>\n              <span>{city.emoji}</span> <span>{city.cityName}</span>\n            </Popup>\n          </Marker>\n        ))}\n\n        <ChangeCenter position={mapPosition} />\n        <DetectClick />\n      </MapContainer>\n    </div>\n  );\n}\n\nfunction ChangeCenter({ position }) {\n  const map = useMap();\n  map.setView(position);\n  return null;\n}\n\nfunction DetectClick() {\n  const navigate = useNavigate();\n\n  useMapEvents({\n    click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),\n  });\n}\n\nexport default Map;\n"
+            },
+            {
+              "name": "Map.module.css",
+              "type": "file",
+              "content": ".mapContainer {\n  flex: 1;\n  height: 100%;\n  background-color: var(--color-dark--2);\n  position: relative;\n}\n\n.map {\n  height: 100%;\n}\n\n/* Here we want to style classes that are coming from leaflet. So we want CSS Modules to give us the ACTUAL classnames, not to add some random ID to them, because then they won't match the classnames defined inside the map. The solution is to define these classes as GLOBAL */\n:global(.leaflet-popup .leaflet-popup-content-wrapper) {\n  background-color: var(--color-dark--1);\n  color: var(--color-light--2);\n  border-radius: 5px;\n  padding-right: 0.6rem;\n}\n\n:global(.leaflet-popup .leaflet-popup-content) {\n  font-size: 1.5rem;\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n}\n\n:global(.leaflet-popup .leaflet-popup-content span:first-child) {\n  font-size: 2.5rem;\n  line-height: 1;\n}\n\n:global(.leaflet-popup .leaflet-popup-tip) {\n  background-color: var(--color-dark--1);\n}\n\n:global(.leaflet-popup-content-wrapper) {\n  border-left: 5px solid var(--color-brand--2);\n}\n"
+            },
+            {
+              "name": "Message.jsx",
+              "type": "file",
+              "content": "import styles from \"./Message.module.css\";\n\nfunction Message({ message }) {\n  return (\n    <p className={styles.message}>\n      <span role=\"img\">👋</span> {message}\n    </p>\n  );\n}\n\nexport default Message;\n"
+            },
+            {
+              "name": "Message.module.css",
+              "type": "file",
+              "content": ".message {\n  text-align: center;\n  font-size: 1.8rem;\n  width: 80%;\n  margin: 2rem auto;\n  font-weight: 600;\n}\n"
+            },
+            {
+              "name": "PageNav.jsx",
+              "type": "file",
+              "content": "import { NavLink } from \"react-router-dom\";\nimport styles from \"./PageNav.module.css\";\nimport Logo from \"./Logo\";\n\nfunction PageNav() {\n  return (\n    <nav className={styles.nav}>\n      <Logo />\n\n      <ul>\n        <li>\n          <NavLink to=\"/pricing\">Pricing</NavLink>\n        </li>\n        <li>\n          <NavLink to=\"/product\">Product</NavLink>\n        </li>\n        <li>\n          <NavLink to=\"/login\" className={styles.ctaLink}>\n            Login\n          </NavLink>\n        </li>\n      </ul>\n    </nav>\n  );\n}\n\nexport default PageNav;\n"
+            },
+            {
+              "name": "PageNav.module.css",
+              "type": "file",
+              "content": ".nav {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.nav ul {\n  list-style: none;\n  display: flex;\n  align-items: center;\n  gap: 4rem;\n}\n\n.nav a:link,\n.nav a:visited {\n  text-decoration: none;\n  color: var(--color-light--2);\n  text-transform: uppercase;\n  font-size: 1.5rem;\n  font-weight: 600;\n}\n\n/* CSS Modules feature */\n.nav a:global(.active) {\n  color: var(--color-brand--2);\n}\n\na.ctaLink:link,\na.ctaLink:visited {\n  background-color: var(--color-brand--2);\n  color: var(--color-dark--0);\n  padding: 0.8rem 2rem;\n  border-radius: 7px;\n}\n"
+            },
+            {
+              "name": "Sidebar.jsx",
+              "type": "file",
+              "content": "import AppNav from \"./AppNav\";\nimport Logo from \"./Logo\";\nimport Footer from \"./Footer\";\nimport styles from \"./Sidebar.module.css\";\nimport { Outlet } from \"react-router-dom\";\n\nfunction SideBar() {\n  return (\n    <div className={styles.sidebar}>\n      <Logo />\n      <AppNav />\n\n      <Outlet />\n\n      <Footer />\n    </div>\n  );\n}\n\nexport default SideBar;\n"
+            },
+            {
+              "name": "Sidebar.module.css",
+              "type": "file",
+              "content": ".sidebar {\n  flex-basis: 56rem;\n  background-color: var(--color-dark--1);\n  padding: 3rem 5rem 3.5rem 5rem;\n\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  height: calc(100vh - 4.8rem);\n}\n"
+            },
+            {
+              "name": "Spinner.jsx",
+              "type": "file",
+              "content": "import styles from \"./Spinner.module.css\";\n\nfunction Spinner() {\n  return (\n    <div className={styles.spinnerContainer}>\n      <div className={styles.spinner}></div>\n    </div>\n  );\n}\n\nexport default Spinner;\n"
+            },
+            {
+              "name": "Spinner.module.css",
+              "type": "file",
+              "content": ".spinnerContainer {\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.spinner {\n  width: 6rem;\n  height: 6rem;\n  border-radius: 50%;\n  background: conic-gradient(#0000 10%, var(--color-light--2));\n  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);\n  animation: rotate 1.5s infinite linear;\n}\n\n@keyframes rotate {\n  to {\n    transform: rotate(1turn);\n  }\n}\n"
+            },
+            {
+              "name": "SpinnerFullPage.jsx",
+              "type": "file",
+              "content": "import Spinner from \"./Spinner\";\nimport styles from \"./SpinnerFullPage.module.css\";\n\nfunction SpinnerFullPage() {\n  return (\n    <div className={styles.spinnerFullpage}>\n      <Spinner />\n    </div>\n  );\n}\n\nexport default SpinnerFullPage;\n"
+            },
+            {
+              "name": "SpinnerFullPage.module.css",
+              "type": "file",
+              "content": ".spinnerFullpage {\n  margin: 2.5rem;\n  height: calc(100vh - 5rem);\n  background-color: var(--color-dark--1);\n}\n"
+            },
+            {
+              "name": "User.jsx",
+              "type": "file",
+              "content": "import { useNavigate } from \"react-router-dom\";\nimport { useAuth } from \"../contexts/FakeAuthContext\";\nimport styles from \"./User.module.css\";\n\nfunction User() {\n  const navigate = useNavigate();\n  const { user, logout } = useAuth();\n\n  function handleClick() {\n    logout();\n    navigate(\"/\");\n  }\n\n  return (\n    <div className={styles.user}>\n      <img src={user.avatar} alt={user.name} />\n      <span>Welcome, {user.name}</span>\n      <button onClick={handleClick}>Logout</button>\n    </div>\n  );\n}\n\nexport default User;\n\n/*\nCHALLENGE\n\n1) Add `AuthProvider` to `App.jsx`\n2) In the `Login.jsx` page, call `login()` from context\n3) Inside an effect, check whether `isAuthenticated === true`. If so, programatically navigate to `/app`\n4) In `User.js`, read and display logged in user from context (`user` object). Then include this component in `AppLayout.js`\n5) Handle logout button by calling `logout()` and navigating back to `/`\n*/\n"
+            },
+            {
+              "name": "User.module.css",
+              "type": "file",
+              "content": ".user {\n  position: absolute;\n  top: 4.2rem;\n  right: 4.2rem;\n  background-color: var(--color-dark--1);\n  padding: 1rem 1.4rem;\n  border-radius: 7px;\n  z-index: 999;\n  box-shadow: 0 0.8rem 2.4rem rgba(36, 42, 46, 0.5);\n  font-size: 1.6rem;\n  font-weight: 600;\n\n  display: flex;\n  align-items: center;\n  gap: 1.6rem;\n}\n\n.user img {\n  border-radius: 100px;\n  height: 4rem;\n}\n\n.user button {\n  background-color: var(--color-dark--2);\n  border-radius: 7px;\n  border: none;\n  padding: 0.6rem 1.2rem;\n  color: inherit;\n  font-family: inherit;\n  font-size: 1.2rem;\n  font-weight: 700;\n  text-transform: uppercase;\n  cursor: pointer;\n}\n"
+            }
+          ]
+        },
+        {
+          "name": "contexts",
+          "type": "directory",
+          "children": [
+            {
+              "name": "CitiesContext.jsx",
+              "type": "file",
+              "content": "import {\n  createContext,\n  useEffect,\n  useContext,\n  useReducer,\n  useCallback,\n} from \"react\";\n\nconst BASE_URL = \"http://localhost:8000\";\n\nconst CitiesContext = createContext();\n\nconst initialState = {\n  cities: [],\n  currentCity: {},\n  isLoading: false,\n  error: \"\",\n};\n\nfunction reducer(state, action) {\n  switch (action.type) {\n    case \"loading\":\n      return { ...state, isLoading: true };\n\n    case \"cities/loaded\":\n      return {\n        ...state,\n        isLoading: false,\n        cities: action.payload,\n      };\n\n    case \"city/loaded\":\n      return {\n        ...state,\n        isLoading: false,\n        currentCity: action.payload,\n      };\n\n    case \"city/created\":\n      return {\n        ...state,\n        isLoading: false,\n        cities: [...state.cities, action.payload],\n      };\n\n    case \"city/deleted\":\n      return {\n        ...state,\n        isLoading: false,\n        cities: state.cities.filter((city) => city.id !== action.payload),\n      };\n\n    case \"rejected\":\n      return {\n        ...state,\n        isLoading: false,\n        error: action.payload,\n      };\n\n    default:\n      throw new Error(\"Unknown action type\");\n  }\n}\n\nfunction CitiesProvider({ children }) {\n  const [{ cities, currentCity, isLoading, error }, dispatch] = useReducer(\n    reducer,\n    initialState\n  );\n\n  useEffect(function () {\n    async function fetchCities() {\n      dispatch({ type: \"loading\" });\n\n      try {\n        const res = await fetch(`${BASE_URL}/cities`);\n        const data = await res.json();\n        dispatch({ type: \"cities/loaded\", payload: data });\n      } catch {\n        dispatch({\n          type: \"rejected\",\n          payload: \"There was an error loading cities...\",\n        });\n      }\n    }\n    fetchCities();\n  }, []);\n\n  const getCity = useCallback(\n    async function getCity(id) {\n      if (Number(id) === currentCity.id) return;\n\n      dispatch({ type: \"loading\" });\n\n      try {\n        const res = await fetch(`${BASE_URL}/cities/${id}`);\n        const data = await res.json();\n        dispatch({ type: \"city/loaded\", payload: data });\n      } catch {\n        dispatch({\n          type: \"rejected\",\n          payload: \"There was an error loading the city...\",\n        });\n      }\n    },\n    [currentCity.id]\n  );\n\n  async function createCity(newCity) {\n    dispatch({ type: \"loading\" });\n\n    try {\n      const res = await fetch(`${BASE_URL}/cities`, {\n        method: \"POST\",\n        body: JSON.stringify(newCity),\n        headers: {\n          \"Content-Type\": \"application/json\",\n        },\n      });\n      const data = await res.json();\n\n      dispatch({ type: \"city/created\", payload: data });\n    } catch {\n      dispatch({\n        type: \"rejected\",\n        payload: \"There was an error creating the city...\",\n      });\n    }\n  }\n\n  async function deleteCity(id) {\n    dispatch({ type: \"loading\" });\n\n    try {\n      await fetch(`${BASE_URL}/cities/${id}`, {\n        method: \"DELETE\",\n      });\n\n      dispatch({ type: \"city/deleted\", payload: id });\n    } catch {\n      dispatch({\n        type: \"rejected\",\n        payload: \"There was an error deleting the city...\",\n      });\n    }\n  }\n\n  return (\n    <CitiesContext.Provider\n      value={{\n        cities,\n        currentCity,\n        isLoading,\n        error,\n        getCity,\n        createCity,\n        deleteCity,\n      }}\n    >\n      {children}\n    </CitiesContext.Provider>\n  );\n}\n\nfunction useCities() {\n  const context = useContext(CitiesContext);\n  if (context === undefined)\n    throw new Error(\"CitiesContext was used outside te CitiesProvider\");\n  return context;\n}\n\nexport { CitiesProvider, useCities };\n"
+            },
+            {
+              "name": "FakeAuthContext.jsx",
+              "type": "file",
+              "content": "import { createContext, useContext, useReducer } from \"react\";\n\nconst AuthContext = createContext();\n\nconst initialState = {\n  user: null,\n  isAuthenticated: false,\n};\n\nfunction reducer(state, action) {\n  switch (action.type) {\n    case \"login\":\n      return {\n        ...state,\n        user: action.payload,\n        isAuthenticated: true,\n      };\n    case \"logout\":\n      return {\n        ...state,\n        user: null,\n        isAuthenticated: false,\n      };\n    default:\n      throw new Error(\"Unknown action\");\n  }\n}\n\nconst FAKE_USER = {\n  name: \"Jack\",\n  email: \"jack@example.com\",\n  password: \"qwerty\",\n  avatar: \"https://i.pravatar.cc/100?u=zz\",\n};\n\nfunction AuthProvider({ children }) {\n  const [{ user, isAuthenticated }, dispatch] = useReducer(\n    reducer,\n    initialState\n  );\n\n  function login(email, password) {\n    if (email === FAKE_USER.email && password === FAKE_USER.password)\n      dispatch({ type: \"login\", payload: FAKE_USER });\n  }\n\n  function logout() {\n    dispatch({ type: \"logout\" });\n  }\n\n  return (\n    <AuthContext.Provider\n      value={{\n        user,\n        isAuthenticated,\n        login,\n        logout,\n      }}\n    >\n      {children}\n    </AuthContext.Provider>\n  );\n}\n\nfunction useAuth() {\n  const context = useContext(AuthContext);\n  if (context === undefined)\n    throw new Error(\"AuthContext was used outside AuthProvider\");\n  return context;\n}\n\nexport { AuthProvider, useAuth };\n"
+            }
+          ]
+        },
+        {
+          "name": "hooks",
+          "type": "directory",
+          "children": [
+            {
+              "name": "useGeolocation.js",
+              "type": "file",
+              "content": "import { useState } from \"react\";\n\nexport function useGeolocation(defaultPosition = null) {\n  const [position, setPosition] = useState(defaultPosition);\n  const [isLoading, setIsLoading] = useState(false);\n  const [error, setError] = useState(null);\n\n  function getPosition() {\n    if (!navigator.geolocation)\n      return setError(\"Your browser does not support geolocation\");\n\n    setIsLoading(true);\n    navigator.geolocation.getCurrentPosition(\n      (pos) => {\n        setPosition({\n          lat: pos.coords.latitude,\n          lng: pos.coords.longitude,\n        });\n        setIsLoading(false);\n      },\n      (error) => {\n        setError(error.message);\n        setIsLoading(false);\n      }\n    );\n  }\n\n  return { position, getPosition, isLoading, error };\n}\n"
+            },
+            {
+              "name": "useUrlPosition.js",
+              "type": "file",
+              "content": "import { useSearchParams } from \"react-router-dom\";\n\nexport function useUrlPosition() {\n  const [searchParams] = useSearchParams();\n  const lat = searchParams.get(\"lat\");\n  const lng = searchParams.get(\"lng\");\n\n  return [lat, lng];\n}\n"
+            }
+          ]
+        },
+        {
+          "name": "index.css",
+          "type": "file",
+          "content": "/* Taken from getting started guide at: https://leafletjs.com/examples/quick-start/ */\n@import \"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\";\n@import \"https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap\";\n\n/* These CSS variables are global, so they are available in all CSS modules */\n:root {\n  --color-brand--1: #ffb545;\n  --color-brand--2: #00c46a;\n\n  --color-dark--0: #242a2e;\n  --color-dark--1: #2d3439;\n  --color-dark--2: #42484d;\n  --color-light--1: #aaa;\n  --color-light--2: #ececec;\n  --color-light--3: #d6dee0;\n}\n\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: inherit;\n}\n\nhtml {\n  font-size: 62.5%;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: \"Manrope\", sans-serif;\n  color: var(--color-light--2);\n  font-weight: 400;\n  line-height: 1.6;\n}\n\nlabel {\n  font-size: 1.6rem;\n  font-weight: 600;\n}\n\ninput,\ntextarea {\n  width: 100%;\n  padding: 0.8rem 1.2rem;\n  font-family: inherit;\n  font-size: 1.6rem;\n  border: none;\n  border-radius: 5px;\n  background-color: var(--color-light--3);\n  transition: all 0.2s;\n}\n\ninput:focus {\n  outline: none;\n  background-color: #fff;\n}\n\n.cta:link,\n.cta:visited {\n  display: inline-block;\n  background-color: var(--color-brand--2);\n  color: var(--color-dark--1);\n  text-transform: uppercase;\n  text-decoration: none;\n  font-size: 1.6rem;\n  font-weight: 600;\n  padding: 1rem 3rem;\n  border-radius: 5px;\n}\n\n/*\n\"importCSSModule\": {\n    \"prefix\": \"csm\",\n    \"scope\": \"javascript,typescript,javascriptreact\",\n    \"body\": [\"import styles from './${TM_FILENAME_BASE}.module.css'\"],\n    \"description\": \"Import CSS Module as `styles`\"\n  },\n*/\n"
+        },
+        {
+          "name": "main.jsx",
+          "type": "file",
+          "content": "import React from \"react\";\nimport ReactDOM from \"react-dom/client\";\nimport App from \"./App.jsx\";\nimport \"./index.css\";\n\nReactDOM.createRoot(document.getElementById(\"root\")).render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n"
+        },
+        {
+          "name": "pages",
+          "type": "directory",
+          "children": [
+            {
+              "name": "AppLayout.jsx",
+              "type": "file",
+              "content": "import Sidebar from \"../components/Sidebar\";\nimport Map from \"../components/Map\";\nimport styles from \"./AppLayout.module.css\";\nimport User from \"../components/User\";\n\nfunction AppLayout() {\n  return (\n    <div className={styles.app}>\n      <User />\n      <Sidebar />\n      <Map />\n    </div>\n  );\n}\n\nexport default AppLayout;\n"
+            },
+            {
+              "name": "AppLayout.module.css",
+              "type": "file",
+              "content": ".app {\n  height: 100vh;\n  padding: 2.4rem;\n  overscroll-behavior-y: none;\n  display: flex;\n  position: relative;\n}\n"
+            },
+            {
+              "name": "Homepage.jsx",
+              "type": "file",
+              "content": "import { Link } from \"react-router-dom\";\nimport PageNav from \"../components/PageNav\";\nimport styles from \"./Homepage.module.css\";\n\nexport default function Homepage() {\n  return (\n    <main className={styles.homepage}>\n      <PageNav />\n      <section>\n        <h1>\n          You travel the world.\n          <br />\n          WorldWise keeps track of your adventures.\n        </h1>\n        <h2>\n          A world map that tracks your footsteps into every city you can think\n          of. Never forget your wonderful experiences, and show your friends how\n          you have wandered the world.\n        </h2>\n        <Link to=\"/login\" className=\"cta\">\n          Start tracking now\n        </Link>\n      </section>\n    </main>\n  );\n}\n"
+            },
+            {
+              "name": "Homepage.module.css",
+              "type": "file",
+              "content": ".homepage {\n  height: calc(100vh - 5rem);\n  margin: 2.5rem;\n  background-image: linear-gradient(\n      rgba(36, 42, 46, 0.8),\n      rgba(36, 42, 46, 0.8)\n    ),\n    url(\"/bg.jpg\");\n  background-size: cover;\n  background-position: center;\n  padding: 2.5rem 5rem;\n}\n\n.homepage section {\n  display: flex;\n  flex-direction: column;\n  height: 85%;\n  align-items: center;\n  justify-content: center;\n  gap: 2.5rem;\n  text-align: center;\n}\n\n.homepage h1 {\n  font-size: 4.5rem;\n  line-height: 1.3;\n}\n\n.homepage h2 {\n  width: 90%;\n  font-size: 1.9rem;\n  color: var(--color-light--1);\n  margin-bottom: 2.5rem;\n}\n"
+            },
+            {
+              "name": "Login.jsx",
+              "type": "file",
+              "content": "import { useEffect, useState } from \"react\";\nimport { useAuth } from \"../contexts/FakeAuthContext\";\nimport { useNavigate } from \"react-router-dom\";\n\nimport PageNav from \"../components/PageNav\";\nimport Button from \"../components/Button\";\nimport styles from \"./Login.module.css\";\n\nexport default function Login() {\n  const navigate = useNavigate();\n  const { login, isAuthenticated } = useAuth();\n\n  // PRE-FILL FOR DEV PURPOSES\n  const [email, setEmail] = useState(\"jack@example.com\");\n  const [password, setPassword] = useState(\"qwerty\");\n\n  useEffect(\n    function () {\n      if (isAuthenticated) navigate(\"/app\", { replace: true });\n    },\n    [isAuthenticated, navigate]\n  );\n\n  function handleSubmit(e) {\n    e.preventDefault();\n    if (email && password) login(email, password);\n  }\n\n  return (\n    <main className={styles.login}>\n      <PageNav />\n\n      <form className={styles.form} onSubmit={handleSubmit}>\n        <div className={styles.row}>\n          <label htmlFor=\"email\">Email address</label>\n          <input\n            type=\"email\"\n            id=\"email\"\n            onChange={(e) => setEmail(e.target.value)}\n            value={email}\n          />\n        </div>\n\n        <div className={styles.row}>\n          <label htmlFor=\"password\">Password</label>\n          <input\n            type=\"password\"\n            id=\"password\"\n            onChange={(e) => setPassword(e.target.value)}\n            value={password}\n          />\n        </div>\n\n        <div>\n          <Button type=\"primary\">Login</Button>\n        </div>\n      </form>\n    </main>\n  );\n}\n"
+            },
+            {
+              "name": "Login.module.css",
+              "type": "file",
+              "content": ".login {\n  margin: 2.5rem;\n  padding: 2.5rem 5rem;\n  background-color: var(--color-dark--1);\n  min-height: calc(100vh - 5rem);\n}\n\n.form {\n  background-color: var(--color-dark--2);\n  border-radius: 7px;\n  padding: 2rem 3rem;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 2rem;\n\n  /* Different from other form */\n  width: 48rem;\n  margin: 8rem auto;\n}\n\n.row {\n  display: flex;\n  flex-direction: column;\n  gap: 0.5rem;\n}\n"
+            },
+            {
+              "name": "PageNotFound.jsx",
+              "type": "file",
+              "content": "export default function PageNotFound() {\n  return (\n    <div>\n      <h1>Page not found 😢</h1>\n    </div>\n  );\n}\n"
+            },
+            {
+              "name": "Pricing.jsx",
+              "type": "file",
+              "content": "// Uses the same styles as Product\nimport PageNav from \"../components/PageNav\";\nimport styles from \"./Product.module.css\";\n\nexport default function Product() {\n  return (\n    <main className={styles.product}>\n      <PageNav />\n\n      <section>\n        <div>\n          <h2>\n            Simple pricing.\n            <br />\n            Just $9/month.\n          </h2>\n          <p>\n            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae vel\n            labore mollitia iusto. Recusandae quos provident, laboriosam fugit\n            voluptatem iste.\n          </p>\n        </div>\n        <img src=\"img-2.jpg\" alt=\"overview of a large city with skyscrapers\" />\n      </section>\n    </main>\n  );\n}\n"
+            },
+            {
+              "name": "Product.jsx",
+              "type": "file",
+              "content": "import PageNav from \"../components/PageNav\";\nimport styles from \"./Product.module.css\";\n\nexport default function Product() {\n  return (\n    <main className={styles.product}>\n      <PageNav />\n\n      <section>\n        <img\n          src=\"img-1.jpg\"\n          alt=\"person with dog overlooking mountain with sunset\"\n        />\n        <div>\n          <h2>About WorldWide.</h2>\n          <p>\n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo est\n            dicta illum vero culpa cum quaerat architecto sapiente eius non\n            soluta, molestiae nihil laborum, placeat debitis, laboriosam at fuga\n            perspiciatis?\n          </p>\n          <p>\n            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis\n            doloribus libero sunt expedita ratione iusto, magni, id sapiente\n            sequi officiis et.\n          </p>\n        </div>\n      </section>\n    </main>\n  );\n}\n"
+            },
+            {
+              "name": "Product.module.css",
+              "type": "file",
+              "content": ".product {\n  margin: 2.5rem;\n  padding: 2.5rem 5rem;\n  background-color: var(--color-dark--1);\n  min-height: calc(100vh - 5rem);\n}\n\n.product section {\n  width: clamp(80rem, 80%, 90rem);\n  margin: 6rem auto;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 7rem;\n  align-items: center;\n}\n\n.product img {\n  width: 100%;\n}\n\n.product h2 {\n  font-size: 4rem;\n  line-height: 1.2;\n  margin-bottom: 3rem;\n}\n\n.product p {\n  font-size: 1.6rem;\n  margin-bottom: 2rem;\n}\n\n.product section a {\n  margin-top: 2rem;\n}\n"
+            },
+            {
+              "name": "ProtectedRoute.jsx",
+              "type": "file",
+              "content": "import { useNavigate } from \"react-router-dom\";\nimport { useAuth } from \"../contexts/FakeAuthContext\";\nimport { useEffect } from \"react\";\n\nfunction ProtectedRoute({ children }) {\n  const { isAuthenticated } = useAuth();\n  const navigate = useNavigate();\n\n  useEffect(\n    function () {\n      if (!isAuthenticated) navigate(\"/\");\n    },\n    [isAuthenticated, navigate]\n  );\n\n  return isAuthenticated ? children : null;\n}\n\nexport default ProtectedRoute;\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vite.config.js",
+      "type": "file",
+      "content": "import { defineConfig } from \"vite\";\nimport react from \"@vitejs/plugin-react\";\nimport eslint from \"vite-plugin-eslint\";\n\n// https://vitejs.dev/config/\nexport default defineConfig({\n  plugins: [react(), eslint()],\n});\n"
+    }
+  ]
+}
