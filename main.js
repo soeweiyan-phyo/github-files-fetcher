@@ -1,4 +1,5 @@
 const axios = require("axios");
+const fs = require("fs");
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -32,12 +33,27 @@ async function getRepoFiles(path = "") {
         children: await getRepoFiles(item.path),
       });
     } else {
+      // Check for extension types
+      const extension = item.name.split(".").pop().toLowerCase();
+      const isImage = ["png", "jpg", "jpeg", "gif", "bmp"].includes(extension);
+      const isJson = extension === "json";
+      const isReadMe = extension === "md";
+
+      // Skip README files
+      if (isReadMe || item.name === "package-lock.json") continue;
+
+      // Get file
       const fileResponse = await axios.get(item.download_url);
       const fileContent = fileResponse.data;
+
       repoFiles.push({
         name: item.name,
         type: "file",
-        content: fileContent,
+        content: isImage
+          ? ""
+          : isJson
+          ? JSON.stringify(fileContent)
+          : fileContent,
       });
     }
   }
@@ -62,6 +78,34 @@ function printFileStructure(fileStructure, indent = "") {
   }
 }
 
+// Write the file structure and contents to a text file
+function writeFileStructure(fileStructure, fileHeading, filePath, indent = "") {
+  let fileContent;
+  fileContent = fileHeading;
+
+  for (const item of fileStructure) {
+    if (item.type === "directory") {
+      fileContent += `${indent}📁 ${item.name}\n`;
+      fileContent += writeFileStructure(
+        item.children,
+        "",
+        filePath,
+        `${indent} `
+      );
+    } else {
+      fileContent += `${indent}📄 ${item.name}\n`;
+      fileContent += `${indent} Content:\n`;
+      fileContent += `${indent} \`\`\`\n`;
+      fileContent += `${item.content}\n`;
+      fileContent += `${indent} \`\`\`\n`;
+      fileContent += "\n";
+    }
+  }
+
+  fs.writeFileSync(filePath, fileContent);
+  return fileContent;
+}
+
 async function main() {
   try {
     // Retrieve repository information
@@ -73,10 +117,20 @@ async function main() {
     const repoFiles = await getRepoFiles();
 
     // Print the repository information and file structure
-    console.log(`Repository: ${repoData.full_name}`);
-    console.log(`Link: ${repoData.html_url}`);
-    console.log("\nFile Structure and Contents:\n");
-    printFileStructure(repoFiles);
+    // console.log(`Repository: ${repoData.full_name}`);
+    // console.log(`Link: ${repoData.html_url}`);
+    // console.log("\nFile Structure and Contents:\n");
+    // printFileStructure(repoFiles);
+
+    const fileContent = {
+      repoName: `${repoData.full_name}`,
+      repoLink: `${repoData.html_url}`,
+      files: repoFiles,
+    };
+    // let fileHeading;
+    // fileHeading = `Repository: ${repoData.full_name}\nLink: ${repoData.html_url}\n\nFile Structure and Contents:\n`;
+    // writeFileStructure(repoFiles, fileHeading, `${REPO_NAME}.txt`);
+    fs.writeFileSync(`${REPO_NAME}.json`, JSON.stringify(fileContent, null, 2));
   } catch (error) {
     console.error("Error:", error);
   }
